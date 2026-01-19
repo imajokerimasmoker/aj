@@ -1,0 +1,23 @@
+:8000 {
+    # Serve the frontend
+    root * frontend/dist/frontend/browser
+    file_server
+
+    # Proxy API requests
+    handle /api/* {
+        reverse_proxy localhost:8080
+    }
+
+    # Serve music files
+    handle /music/* {
+        uri strip_prefix /music
+        file_server {
+            root ./music
+        }
+    }
+
+    # Handle Angular routing (fallback to index.html for other paths)
+    handle {
+        try_files {path} /index.html
+    }
+}

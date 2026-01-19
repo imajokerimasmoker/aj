@@ -1,0 +1,60 @@
+.player-container {
+  font-family: sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.now-playing {
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+.controls button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.playlist {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.playlist ul {
+  list-style: none;
+  padding: 0;
+}
+
+.playlist li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.playlist li:hover {
+  background-color: #f0f0f0;
+}
+
+.playlist li.active {
+  font-weight: bold;
+  background-color: #e0f0ff;
+  border-left: 4px solid #007bff;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
