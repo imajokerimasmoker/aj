@@ -6,8 +6,8 @@
     <h2>Now Playing: {{ currentTrackName }}</h2>
     <audio #audioPlayer [src]="currentTrackUrl" controls (ended)="onEnded()" autoplay></audio>
     <div class="controls">
-      <button (click)="prev()">Previous</button>
-      <button (click)="next()">Next</button>
+      <button (click)="prev()" [disabled]="currentIndex() === 0">Previous</button>
+      <button (click)="next()" [disabled]="currentIndex() === playlist().length - 1">Next</button>
     </div>
   </div>
 

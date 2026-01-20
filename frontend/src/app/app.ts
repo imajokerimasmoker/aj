@@ -74,14 +74,20 @@ export class App implements OnInit {
   }
 
   next() {
-    if (this.playlist().length === 0) return;
-    const nextIndex = (this.currentIndex() + 1) % this.playlist().length;
-    this.playTrack(nextIndex);
+    const list = this.playlist();
+    if (list.length === 0) return;
+    const nextIndex = this.currentIndex() + 1;
+    if (nextIndex < list.length) {
+      this.playTrack(nextIndex);
+    }
   }
 
   prev() {
-    if (this.playlist().length === 0) return;
-    const prevIndex = (this.currentIndex() - 1 + this.playlist().length) % this.playlist().length;
-    this.playTrack(prevIndex);
+    const list = this.playlist();
+    if (list.length === 0) return;
+    const prevIndex = this.currentIndex() - 1;
+    if (prevIndex >= 0) {
+      this.playTrack(prevIndex);
+    }
   }
 }
